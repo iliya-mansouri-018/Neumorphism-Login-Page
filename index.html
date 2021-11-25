@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="/Assets/css/Login.css">
+  <link rel="stylesheet" href="/Assets/Font/font.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="Container">
+    <div class="Wrap-Login">
+      <form action="login.php" method="POST" id="login_form">
+        <h1 class="Login-Text">Login</h1>
+        <div class="Wrap-Input">
+          <span class="Input-Label">UserName</span>
+          <i class="fas fa-user icon"></i>
+          <input type="text" placeholder="Enter Your UserName" class="Input user" name="username">
+        </div>
+        <div class="Wrap-Input Pass-Input">
+          <span class="Input-Label">Password</span>
+          <i class="fas fa-lock icon"></i>
+          <input type="password" placeholder="Enter Your Password" class="Input user" name="password">
+          <i class="fa fa-eye eye"></i>
+        </div>
+        <div class="btn">
+          <input type="submit" name="submit" class="button" value="Login">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    const root = document.documentElement
+    const eye = document.querySelector(".eye")
+    passwordInput = document.querySelectorAll(".user")[1]
+    eye.addEventListener("click", function() {
+      root.classList.toggle("active")
+      eye.classList.toggle("fa-eye-slash")
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password'
+      passwordInput.focus();
+    })
+  </script>
+</body>
+
+</html>
